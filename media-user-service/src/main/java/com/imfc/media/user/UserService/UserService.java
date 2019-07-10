@@ -1,7 +1,6 @@
 package com.imfc.media.user.UserService;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.imfc.meida.user.userService.IUserService;
 
 import java.util.HashMap;
 import java.util.Map;

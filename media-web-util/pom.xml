@@ -4,9 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.imfc.media</groupId>
+        <artifactId>media-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.imfc.media</groupId>
     <artifactId>media-web-util</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <!---->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.5.19.RELEASE</version>
+        </dependency>
+        <!--本项目下的依赖-->
+        <dependency>
+            <groupId>com.imfc.media</groupId>
+            <artifactId>media-common-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.imfc.media</groupId>
+            <artifactId>media-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+    </dependencies>
 
 </project>
