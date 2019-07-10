@@ -1,7 +1,7 @@
 package com.imfc.media.user.controller;
 
-import com.imfc.media.user.UserService.IUserService;
-import jdk.nashorn.internal.ir.annotations.Reference;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.imfc.media.user.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

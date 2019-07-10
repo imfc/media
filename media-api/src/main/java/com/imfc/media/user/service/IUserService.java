@@ -1,4 +1,4 @@
-package com.imfc.media.user.UserService;
+package com.imfc.media.user.service;
 
 import java.util.Map;
 

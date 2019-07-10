@@ -1,4 +1,10 @@
-package com.imfc.media.user.UserService;
+package com.imfc.media.user.service;
+
+
+
+
+
+
 
 import com.alibaba.dubbo.config.annotation.Service;
 
@@ -7,7 +13,9 @@ import java.util.Map;
 
 @Service
 public class UserService implements IUserService {
-
+    static{
+        System.err.println("userservice。。。。。");
+    }
 
     @Override
     public Map<String, Object> getUser(String name, String password) {
