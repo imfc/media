@@ -21,4 +21,11 @@ public class UserController {
 
         return userService.getUser("zhangsan","123456");
     }
+
+    @RequestMapping("index")
+    @ResponseBody
+    public String index(HttpServletRequest request){
+
+        return "success";
+    }
 }
