@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns:th="http://www.thymeleaf.org">
 
 	<head>
 		<meta charset="UTF-8">
@@ -42,8 +42,10 @@
 				<p class="copyright">Copyright 2015-2016 by XIAODU</p>
 			</div>
 		</div>
+
 		<script src="/layui/layui.js" type="text/javascript" charset="utf-8"></script>
-		<script>
+		<script th:>
+			var returnUrl = [[${param.returnUrl}]];
 			layui.use(['form', 'layedit', 'laydate'], function() {
 				var form = layui.form(),
 					layer = layui.layer;

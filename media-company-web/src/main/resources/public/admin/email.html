@@ -188,7 +188,7 @@
 				var iframeObj = $(window.frameElement).attr('name');	
 				
 				$('#write-email-btn').on('click',function(){
-					parent.page("写邮件", 'email-write.html', iframeObj, w = "700px", h = "600px");
+					parent.page("写邮件", '/admin/email-write.html', iframeObj, w = "700px", h = "600px");
 				})
 				//列表
 				$('.email-folder').on('click','a',function(){
