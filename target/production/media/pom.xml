@@ -9,9 +9,9 @@
     </parent>
 
     <groupId>com.imfc.media</groupId>
-    <artifactId>media-doctor-web</artifactId>
+    <artifactId>media-user-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>media-doctor-web</name>
+    <name>media-user-web</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -19,20 +19,23 @@
     </properties>
 
     <dependencies>
+
+
         <dependency>
             <groupId>com.imfc.media</groupId>
             <artifactId>media-web-util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>7.0.82</version>
+        </dependency>
+
+
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

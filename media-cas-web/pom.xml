@@ -7,11 +7,10 @@
         <artifactId>media-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
     <groupId>com.imfc.media</groupId>
-    <artifactId>media-doctor-web</artifactId>
+    <artifactId>media-cas-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>media-doctor-web</name>
+    <name>media-cas-web</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
