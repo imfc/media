@@ -1,0 +1,3 @@
+com\imfc\media\configuration\InterceptorConfig.class
+com\imfc\media\interceptor\LoginInterceptor.class
+com\imfc\media\util\JwtUtil.class

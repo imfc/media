@@ -30,6 +30,11 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.7</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
         <!--commons-->
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -50,7 +55,12 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
         <!--apache-->
         <dependency>
             <groupId>org.apache.commons</groupId>
