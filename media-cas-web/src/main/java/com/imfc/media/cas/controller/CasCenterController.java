@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,10 +20,13 @@ public class CasCenterController {
         String pwd = request.getParameter("password");
         if("admin".equals(uid) && "123456".equals(pwd)){
             Map<String,Object> map = new HashMap<>();
+            map.put("userId","001");
+            map.put("userName","zhangsan");
+            map.put("expireTime",new Date().getTime()+1000*1800);
             String jwt = JwtUtil.createJWT(map, "123456");
             return jwt;
         }else{
-            return "";
+            return "fail";
         }
 
     }
