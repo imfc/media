@@ -10,6 +10,8 @@ public class DoctorInterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/pages/examples/**");
+        registry.addInterceptor(new LoginInterceptor())
+                .addPathPatterns("/**.json")
+                .excludePathPatterns("**.html","/pages/**","/ajax/**","/css/**","/fonts/**","/img/**","/js/**","/less/**");
     }
 }

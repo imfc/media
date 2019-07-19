@@ -2,6 +2,7 @@ package com.imfc.media.cas.controller;
 
 import com.imfc.media.util.JwtUtil;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,6 +16,7 @@ public class CasCenterController {
 
     @RequestMapping("/login")
     @ResponseBody
+    @CrossOrigin(origins = "http://imfc.com", maxAge = 3600)
     public String login(HttpServletRequest request){
         String uid = request.getParameter("userid");
         String pwd = request.getParameter("password");

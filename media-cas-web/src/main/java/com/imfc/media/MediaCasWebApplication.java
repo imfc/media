@@ -1,4 +1,4 @@
-package com.imfc.media.cas;
+package com.imfc.media;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
