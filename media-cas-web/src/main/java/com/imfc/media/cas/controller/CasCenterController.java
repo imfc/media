@@ -16,9 +16,9 @@ public class CasCenterController {
 
     @RequestMapping("/login")
     @ResponseBody
-    @CrossOrigin(origins = "http://imfc.com", maxAge = 3600)
+    @CrossOrigin(origins = "*")
     public String login(HttpServletRequest request){
-        String uid = request.getParameter("userid");
+        String uid = request.getParameter("userId");
         String pwd = request.getParameter("password");
         if("admin".equals(uid) && "123456".equals(pwd)){
             Map<String,Object> map = new HashMap<>();

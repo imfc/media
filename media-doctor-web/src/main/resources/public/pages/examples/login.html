@@ -63,28 +63,7 @@
              var returnUrl = [[${param.returnUrl}]];
              console.log(returnUrl);
              // alert("用户名：" + user.name);
-
-             function submitLoginForm(){
-                 var $form = $("#loginForm");
-                 var userId =$form.find("[name='userId']").val();
-                 var password = $form.find("[name='password']").val();
-                 $.ajax({
-                     type: 'POST',
-                     url: "localhost:9090/login",
-                     data: {"userId":userId,"password":password},
-                     dataType: "json",
-                     beforeSend:function(xhr){
-                         xhr.setRequestHeader("CORS_ORIGIN_ALLOW_ALL",true);
-                     },
-                     success: function (rtdata) {
-                         console.log(rtdata);
-                     },
-                     error: function (rtdata) {
-                         console.log(rtdata);
-                     }
-                 });
-             }
-
         </script>
+        <script src="/js/AdminLTE/login.js"></script>-
     </body>
 </html>
