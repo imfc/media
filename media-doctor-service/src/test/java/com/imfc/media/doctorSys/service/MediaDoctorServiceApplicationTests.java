@@ -1,4 +1,4 @@
-package com.imfc.media.doctor.service;
+package com.imfc.media.doctorSys.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -9,7 +9,7 @@ media-cas-web port:9090
 
 #医院管理服务
 media-company-service port:8083
-media-company-service port:8084
+media-company-web port:8084
 
 #商城服务
 media-shop-service port:8085
@@ -25,6 +25,7 @@ media-community-web port:8090
 
 #财务系统
 media-finance-service port:8091
+media-finance-web port:8092
 
 #系统后台管理服务
 media-system-service port:8093
