@@ -1,8 +1,8 @@
 package com.imfc.media.bean;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.sun.istack.internal.NotNull;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 import java.util.Date;
@@ -17,18 +17,19 @@ public class UmsUser implements Serializable {
 	private static final long serialVersionUID =  7167311191956921952L;
 
    	@Column(name = "id" )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	/**
 	 * 用户名
 	 */
-   	@Column(name = "user_name" )
+   	@Column(name = "user_name",columnDefinition = "aaa")
 	private String userName;
 
 	/**
 	 * 登录密码
 	 */
-   	@Column(name = "password" )
+   	@Column(name = "password")
 	private String password;
 
 	/**
@@ -40,7 +41,7 @@ public class UmsUser implements Serializable {
 	/**
 	 * 出生日期
 	 */
-   	@Column(name = "birthday" )
+   	@Column(name = "birthday")
 	private Date birthday;
 
 	/**

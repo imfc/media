@@ -6,7 +6,7 @@
 属性namespace：空间名，主要在代理中使用。这个namespace是唯一的。
 这里把mapper标签和接口联系在一起了，namespace=写接口路径，映射文件要和接口在同一目录下
  -->
-<mapper namespace="com.dao.UserinfoDAO">
+<mapper namespace="com.imfc.media.mapper.user.UserMapper">
     <!-- =============映射关系标签=============
     属性type:写po类的包名类名，由于之前定义了po类的别名，这里就写这个别名
     属性id：是这个映射标签的唯一标识
@@ -15,15 +15,9 @@
     属性property：是po类里所指定的列名
     通常会在原列名后面加下划线，这是固定的，这里就是id后面_
      -->
-    <!--<resultMap type="com.imfc.media.bean" id="UmsUser">
-        <id column="id" property="id"/>
-        <result column="loginname" property="loginname"/>
-        <result column="loginpass" property="loginpass"/>
-        <result column="username" property="username"/>
-        <result column="upower" property="upower"/>
-        <result column="birthday" property="birthday"/>
-        <result column="sex" property="sex"/>
-    </resultMap>-->
+    <resultMap type="com.imfc.media.bean.UmsUser" id="UmsUser">
+
+    </resultMap>
     <!-- ==================定义sql片段==============
     sql:是sql片段标签属性id是该片段的唯一标识 -->
     <sql id="zd">
@@ -41,7 +35,7 @@
     <!-- 查询修改用户信息的id -->
     <select id="getUserById" resultMap="UmsUser" parameterType="int">
         <!-- 用include标签引入sql片段，refid写定义sql片段的id，where标签不要写在片段里 -->
-        select * from ums_user where id=#{id}
+        select <include refid="zd" />from ums_user <where>id=#{id}</where>
     </select>
 
     <!-- 修改用户信息 -->

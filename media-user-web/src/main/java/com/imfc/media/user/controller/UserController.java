@@ -29,4 +29,11 @@ public class UserController {
 
         return "success";
     }
+    @RequestMapping("user")
+    @ResponseBody
+    public UmsUser getUser(HttpServletRequest request){
+        Integer id = Integer.valueOf(request.getParameter("id"));
+        UmsUser user = userService.getUser(id);
+        return user;
+    }
 }
