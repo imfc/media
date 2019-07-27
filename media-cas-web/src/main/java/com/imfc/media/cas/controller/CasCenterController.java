@@ -1,6 +1,8 @@
 package com.imfc.media.cas.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.imfc.media.common.result.MediaResult;
+import com.imfc.media.common.result.MediaResultService;
 import com.imfc.media.userSys.service.user.IUserService;
 import com.imfc.media.util.JwtUtil;
 import org.slf4j.Logger;
@@ -22,8 +24,8 @@ public class CasCenterController {
 
     @RequestMapping("/login")
     @ResponseBody
-//    @CrossOrigin(origins = "*")
-    public String login(HttpServletRequest request){
+    public MediaResult login(HttpServletRequest request){
+
         String uid = request.getParameter("userId");
         String pwd = request.getParameter("password");
         if("admin".equals(uid) && "123456".equals(pwd)){
@@ -33,10 +35,10 @@ public class CasCenterController {
             map.put("expireTime",new Date().getTime()+1000*1800);
             String jwt = JwtUtil.createJWT(map, "123456");
             logger.info("登录成功！");
-            return jwt;
+            return MediaResultService.getInst().getOkResult(jwt);
         }else{
             logger.info("登录失败！");
-            return "fail";
+            return MediaResultService.getInst().getErrorResult("faile");
         }
 
     }

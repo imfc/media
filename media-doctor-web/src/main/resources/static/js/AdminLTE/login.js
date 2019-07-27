@@ -7,21 +7,8 @@ function submitLoginForm() {
     user.password = password;
     var url = "http://localhost:9090/login";
 
-    $.ajax({
-        type:"POST",
-        url:url,
-        data:user,
-        success:function(data,status){
-            console.log("success:"+data)
-            var returnUrl = getQueryVariable("returnUrl");
-            window.location.href=returnUrl+"?jwt="+data;
-        },
-        error:function(xhr,errorText,errorType){
-            console.log("complete:"+errorText);
-        },
-        complete:function(){
-            // console.log("error:"+info);
-        }
+    post(url,user,function(result){
+        console.log(result);
     })
 
 
