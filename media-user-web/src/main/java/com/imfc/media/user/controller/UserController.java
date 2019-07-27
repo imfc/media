@@ -1,7 +1,8 @@
 package com.imfc.media.user.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.imfc.media.user.service.IUserService;
+import com.imfc.media.bean.UmsUser;
+import com.imfc.media.userSys.service.user.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +18,7 @@ public class UserController {
 
     @RequestMapping("login")
     @ResponseBody
-    public Map<String,Object> login(HttpServletRequest request){
+    public UmsUser login(HttpServletRequest request){
 
         return userService.getUser("zhangsan","123456");
     }
@@ -27,5 +28,12 @@ public class UserController {
     public String index(HttpServletRequest request){
 
         return "success";
+    }
+    @RequestMapping("user")
+    @ResponseBody
+    public UmsUser getUser(HttpServletRequest request){
+        Integer id = Integer.valueOf(request.getParameter("id"));
+        UmsUser user = userService.getUser(id);
+        return user;
     }
 }
