@@ -1,23 +1,3 @@
-/*
-	//基于jquery的ajax
-	$.ajax({
-		'url': url,			//请求的url
-		'data': data,		//请求的参数
-		'type': post,		//请求的类型
-		'dataType': json,	//接收数据类型
-		'async': true,		//异步请求
-		'cache': false,		//浏览器缓存
-		'success': function () {},	//请求成功后执行的函数
-		'error': function () {},	//请求失败后执行的函数
-		'jsonpCallback': 'jsonp' + (new Date()).valueOf().toString().substr(-4),//通过jsonp跨域请求的回调函数名
-		'beforeSend': function () {}//请求前要处理的函数
-	});
-*/
-//全局配置
-$.ajaxSetup({
-	contentType:'application/html,text'
-})
-
 //页面加载所要进行的操作
 $(function () {
 	//设置ajax当前状态(是否可以发送);
@@ -25,7 +5,7 @@ $(function () {
 });
 
 // ajax封装
-function ajax(url, data, success, cache, alone, async, type, dataType, error) {
+function ajax(url, data, success, error, async, cache, alone,  type, dataType) {
 	var type = type || 'post';//请求类型
 	var dataType = dataType || 'json';//接收数据类型
 	var async = async || true;//异步请求
@@ -87,9 +67,9 @@ function ajax(url, data, success, cache, alone, async, type, dataType, error) {
 		'jsonpCallback': 'jsonp' + (new Date()).valueOf().toString().substr(-4),
 		'beforeSend': function () {
 			layer.msg('加载中', { //通过layer插件来进行提示正在加载
-				icon:16,
-				shade:0.01
-		});
+				icon: 16,
+				shade: 0.01
+			});
 		},
 	});
 }
