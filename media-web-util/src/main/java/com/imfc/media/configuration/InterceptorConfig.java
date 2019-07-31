@@ -28,7 +28,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowCredentials(true)
-                .allowedMethods("GET", "POST", "DELETE", "PUT","OPTIONS")
+                .allowedMethods("GET", "POST", "DELETE", "PUT")
                 .maxAge(3600 * 24);
     }
 

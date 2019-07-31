@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +32,8 @@ public class CasCenterController {
     @RequestMapping("/login")
     @ResponseBody
     @CrossOrigin(allowedHeaders = "*",allowCredentials = "true",maxAge = 3600)
-    public MediaResult login(HttpServletRequest request){
+    public MediaResult login(HttpServletRequest request, HttpServletResponse response){
+        response.setHeader("Access-Control-Allow-Origin","*");
 
         String uid = request.getParameter("userId");
         String pwd = request.getParameter("password");

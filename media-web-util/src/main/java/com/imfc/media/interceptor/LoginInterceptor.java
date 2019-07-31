@@ -16,15 +16,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //
         logger.error("进入公共拦截器了....");
-        if(request.getMethod().equals(RequestMethod.OPTIONS.name())) { response.setStatus(HttpStatus.OK.value()); return false; }
+        //对于OPEIONS请求进行拦截，并直接返回成功；
+//        if(request.getMethod().equals(RequestMethod.OPTIONS.name())){
+//            response.setStatus(HttpStatus.OK.value());
+//            return false;
+//        }
         return true;
-    }
-
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        response.setHeader("CORS_ORIGIN_ALLOW_ALL","true");
-        super.postHandle(request, response, handler, modelAndView);
     }
 }
