@@ -6,12 +6,12 @@ $(function () {
 
 // ajax封装
 function ajax(url, data, success, error, async, cache, alone,  type, dataType) {
-    var type = type || 'post';//请求类型
-    var dataType = dataType || 'json';//接收数据类型
-    var async = async || true;//异步请求
-    var alone = alone || false;//独立提交（一次有效的提交）
-    var cache = cache || false;//浏览器历史缓存
-    var success = success || function (data) {
+    type = type || 'post';//请求类型
+    dataType = dataType || 'json';//接收数据类型
+    async = async || true;//异步请求
+    alone = alone || false;//独立提交（一次有效的提交）
+    cache = cache || false;//浏览器历史缓存
+    success = success || function (data) {
         /*console.log('请求成功');*/
         setTimeout(function () {
             layer.msg(data.msg);//通过layer插件来进行提示信息
@@ -30,7 +30,7 @@ function ajax(url, data, success, error, async, cache, alone,  type, dataType) {
             }
         }
     };
-    var error = error || function (data) {
+    error = error || function (data) {
         /*console.error('请求成功失败');*/
         /*data.status;//错误状态吗*/
         layer.closeAll('loading');
@@ -69,7 +69,7 @@ function ajax(url, data, success, error, async, cache, alone,  type, dataType) {
             layer.msg('加载中', { //通过layer插件来进行提示正在加载
                 icon: 16,
                 shade: 0.01
-        });
+            });
         },
     });
 }
@@ -77,9 +77,9 @@ function ajax(url, data, success, error, async, cache, alone,  type, dataType) {
 // submitAjax(post方式提交)
 function submitAjax(form, success, cache, alone) {
     cache = cache || true;
-    var form = $(form);
-    var url = form.attr('action');
-    var data = form.serialize();
+    var $form = $(form);
+    var url = $form.attr('action');
+    var data = $form.serialize();
     ajax(url, data, success, cache, alone, false, 'post','json');
 }
 /*//调用实例
