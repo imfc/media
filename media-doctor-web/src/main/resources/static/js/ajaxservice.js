@@ -69,9 +69,7 @@ function ajax(url, data, success, error, async, cache, alone,  type, dataType) {
         'contentType':"application/x-www-form-urlencoded",
         'jsonpCallback': 'jsonp' + (new Date()).valueOf().toString().substr(-4),
         'beforeSend': function (xhr) {
-            // XMLHttpRequest.setHeaderValue("Access-Control-Allow-Origin");
-            // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-
+            xhr.setRequestHeader('X-Custom-Header', 'value');
             layer.msg('加载中', { //通过layer插件来进行提示正在加载
                 icon: 16,
                 shade: 0.01
@@ -98,15 +96,15 @@ $(function () {
 
 // ajax提交(post方式提交)
 function post(url, data, success, cache, alone) {
-    ajax(url, data, success, cache, alone, false, 'post','json');
+    ajax(url, data, success, cache, alone, false,false, 'post','json');
 }
 
 // ajax提交(get方式提交)
 function get(url, success, cache, alone) {
-    ajax(url, {}, success, alone, false, 'get','json');
+    ajax(url, {}, success, alone, false, false, 'get','json');
 }
 
 // jsonp跨域请求(get方式提交)
 function jsonp(url, success, cache, alone) {
-    ajax(url, {}, success, cache, alone, false, 'get','jsonp');
+    ajax(url, {}, success, cache, alone, false, false, 'get','jsonp');
 }

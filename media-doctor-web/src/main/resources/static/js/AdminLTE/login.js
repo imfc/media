@@ -5,7 +5,7 @@ function submitLoginForm() {
     var user = new Object();
     user.userId = userId;
     user.password = password;
-    var url = "http://localhost:9090/login?userId="+userId+"&password="+password;
+    var url = "http://localhost:9090/login";
 
     // get(url,function(rtdata){
     //     layer.msg("请求成功：jwt:"+rtdata);

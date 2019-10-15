@@ -16,7 +16,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //kk
         logger.error("进入公共拦截器了....");
         if(request.getMethod().equals(RequestMethod.OPTIONS.name())) { response.setStatus(HttpStatus.OK.value()); return false; }
         return true;
