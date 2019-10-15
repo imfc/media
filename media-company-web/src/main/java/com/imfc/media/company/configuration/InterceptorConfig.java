@@ -14,9 +14,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //设置拦截资源路径和白名单路径
-        //以json结尾的请求均拦击
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/**.json").excludePathPatterns("/**.ws");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
+                .excludePathPatterns("/css/**","/fonts/**","/images/**","/js/**","/layui/**","/less/**","/lib/**","/admin/**");
 
     }
 }

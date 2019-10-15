@@ -1,1 +1,8 @@
+com\imfc\media\common\util\HttpClientUtil.class
+com\imfc\media\common\constant\SystemConstant.class
+com\imfc\media\common\result\MediaResultService.class
+com\imfc\media\common\result\MediaResult.class
+com\imfc\media\common\constant\SystemEnum.class
 com\imfc\media\common\util\CookieUtil.class
+com\imfc\media\common\constant\WebConstant.class
+com\imfc\media\common\util\MD5Util.class

@@ -2054,7 +2054,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
             var classes = [
                 'line',
                 'number' + lineNumber,
-                'public.index' + lineIndex,
+                'templates.index' + lineIndex,
                 'alt' + (lineNumber % 2 == 0 ? 1 : 2).toString()
             ];
 

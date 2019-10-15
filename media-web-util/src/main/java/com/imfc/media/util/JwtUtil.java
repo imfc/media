@@ -1,10 +1,12 @@
 package com.imfc.media.util;
 
 import com.alibaba.fastjson.JSON;
+import com.imfc.media.common.util.MD5Util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -50,6 +52,20 @@ public class JwtUtil {
                 .signWith(signatureAlgorithm,base64Security.getBytes()); //估计是第三段密钥
         //生成JWT
         return builder.compact();
+    }
+
+    /*
+     * @Author luxiaojian
+     * @Description 生成秘钥
+     * @Date 11:20 2019/7/28
+     * @Param
+     * @return
+     **/
+    public static String getKey(String ip,String sys){
+        if(StringUtils.isBlank(ip) || StringUtils.isBlank(sys)){
+            return null;
+        }
+        return MD5Util.string2MD5(ip)+";"+MD5Util.string2MD5(sys);
     }
 
     public static void main(String[] args) {

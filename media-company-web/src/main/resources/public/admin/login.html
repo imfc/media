@@ -16,19 +16,19 @@
 				<div class="m-login-warp">
 					<form class="layui-form">
 						<div class="layui-form-item">
-							<input type="text" name="title" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+							<input type="text" name="userId" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
 						</div>
 						<div class="layui-form-item">
 							<input type="text" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
 						</div>
-						<div class="layui-form-item">
+						<!--<div class="layui-form-item">
 							<div class="layui-inline">
 								<input type="text" name="verity" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
 							</div>
 							<div class="layui-inline">
 								<img class="verifyImg" onclick="this.src=this.src+'?c='+Math.random();" src="/images/login/yzm.jpg" />
 							</div>
-						</div>
+						</div>-->
 						<div class="layui-form-item m-login-btn">
 							<div class="layui-inline">
 								<button class="layui-btn layui-btn-normal" lay-submit lay-filter="login">登录</button>
@@ -42,11 +42,14 @@
 				<p class="copyright">Copyright 2015-2016 by XIAODU</p>
 			</div>
 		</div>
-
+		<script src="/js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/ajaxService.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/layui/layui.js" type="text/javascript" charset="utf-8"></script>
-		<script th:>
-			var returnUrl = [[${param.returnUrl}]];
-			layui.use(['form', 'layedit', 'laydate'], function() {
+		<script>
+			// var returnUrl = [[${param.returnUrl}]];
+			layui.config({
+				base:'/js/'
+			}).use(['form', 'layedit', 'laydate'], function() {
 				var form = layui.form(),
 					layer = layui.layer;
 
@@ -66,13 +69,32 @@
 				
 				//监听提交
 				form.on('submit(login)', function(data) {
-					layer.alert(JSON.stringify(data.field), {
-						title: '最终的提交信息'
+					// layer.alert(JSON.stringify(data.field), {
+					// 	title: '最终的提交信息'
+					// })
+					var url = "http://localhost:9090/login";
+					var user = data.field;
+					post(url,user,function(rtdata){
+						var returnUrl = getQueryVariable("returnUrl");
+						returnUrl = decodeURI(returnUrl);
+						console.log(rtdata);
+						// window.location.href = returnUrl;
 					})
+
 					return false;
 				});
 
 			});
+
+			function getQueryVariable(variable){
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+				for (var i=0;i<vars.length;i++) {
+					var pair = vars[i].split("=");
+					if(pair[0] == variable){return pair[1];}
+				}
+				return(false);
+			}
 		</script>
 	</body>
 

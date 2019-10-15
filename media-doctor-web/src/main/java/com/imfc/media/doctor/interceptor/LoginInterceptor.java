@@ -24,7 +24,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         if(StringUtils.isBlank(jwt)){
             System.out.println("cookie中没有jwt，用户未登录，重定向到login.html");
             String returnUrl = request.getRequestURL().toString();
-            response.sendRedirect("/pages/examples/login.html?returnUrl="+returnUrl);
+            response.sendRedirect("login.html?returnUrl="+returnUrl);
             return false;
         }else{
             //不去cas验证，本地直接校验

@@ -12,6 +12,6 @@ public class DoctorInterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/pages/examples/**.html","/layer/**","/ajax/**","/css/**","/fonts/**","/img/**","/js/**","/less/**");
+                .excludePathPatterns("/**.html","/layer/**","/ajax/**","/css/**","/fonts/**","/img/**","/js/**","/less/**");
     }
 }

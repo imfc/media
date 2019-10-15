@@ -28,26 +28,12 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowCredentials(true)
-                .allowedMethods("GET", "POST", "DELETE", "PUT")
+                .allowedMethods("GET", "POST", "DELETE", "PUT","OPTIONS")
                 .maxAge(3600 * 24);
     }
-    private CorsConfiguration addcorsConfig() {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        List<String> list = new ArrayList<>();
-        list.add("*");
-        corsConfiguration.setAllowedOrigins(list);
-    /*
-    // 请求常用的三种配置，*代表允许所有，当时你也可以自定义属性（比如header只能带什么，只能是post方式等等）
-    */
-        corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedHeader("*");
-        corsConfiguration.addAllowedMethod("*");
-        return corsConfiguration;
-    }
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", addcorsConfig());
-        return new CorsFilter(source);
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/**");
     }
 }

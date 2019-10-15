@@ -40,7 +40,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>${fastjson-version}</version>
+                <version>1.2.47</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -56,6 +56,24 @@
 
     <modules>
         <module>../media-common-util</module>
+        <module>../media-community-service</module>
+        <module>../media-community-web</module>
+        <module>../media-company-service</module>
+        <module>../media-company-web</module>
+        <module>../media-doctor-service</module>
+        <module>../media-doctor-web</module>
+        <module>../media-finance-service</module>
+        <module>../media-service-util</module>
+        <module>../media-web-util</module>
+        <module>../media-shop-service</module>
+        <module>../media-shop-web</module>
+        <module>../media-system-service</module>
+        <module>../media-system-web</module>
+        <module>../media-user-service</module>
+        <module>../media-user-web</module>
+        <module>../media-cas-web</module>
+        <module>../media-api</module>
+
 
     </modules>
 </project>
