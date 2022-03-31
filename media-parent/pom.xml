@@ -19,7 +19,7 @@
 
     <properties>
         <starter-version>2.0.5.RELEASE</starter-version>
-        <starter-web-version>2.0.5.RELEASE</starter-web-version>
+        <starter-web-version>2.5.12</starter-web-version>
         <common-util-version>1.0-SNAPSHOT</common-util-version>
         <fastjson-version>1.2.47</fastjson-version>
         <common-lang3-version>3.9</common-lang3-version>
